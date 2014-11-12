@@ -4,4 +4,3 @@
 /app/logs/*
 /vendor/
 /.idea/*
-/app/config/parameters.yml

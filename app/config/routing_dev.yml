@@ -10,5 +10,5 @@ _configurator:
     resource: "@SensioDistributionBundle/Resources/config/routing/webconfigurator.xml"
     prefix:   /_configurator
 
-_main:
+main:
     resource: routing.yml
