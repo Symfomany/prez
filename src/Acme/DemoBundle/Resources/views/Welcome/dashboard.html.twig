@@ -1,0 +1,13 @@
+<html>
+    <body>
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flashMessage|raw }}
+        </div>
+    {% endfor %}
+        <h1>Hello Everyone!</h1>
+        <h3>Tutoriel Symfony 2</h3>
+        <p>Bienvenue à ce tuto Symfony 2!</p>
+    </body>
+</html>

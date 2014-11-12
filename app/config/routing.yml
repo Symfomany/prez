@@ -1,0 +1,4 @@
+hetic_public:
+    resource: "@HeticPublicBundle/Resources/config/routing.yml"
+    prefix:   /
+

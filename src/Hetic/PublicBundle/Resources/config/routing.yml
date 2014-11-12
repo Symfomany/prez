@@ -1,0 +1,35 @@
+hetic_public_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: HeticPublicBundle:Default:index }
+
+hetic_public_response:
+    path:     /message
+    defaults: { _controller: HeticPublicBundle:Default:message }
+
+hetic_public_redirection:
+    path:     /redirection
+    defaults: { _controller: HeticPublicBundle:Default:redirection }
+
+hetic_public_forward:
+    path:     /forward
+    defaults: { _controller: HeticPublicBundle:Default:forward }
+
+hetic_public_notfound:
+    path:     /notfound
+    defaults: { _controller: HeticPublicBundle:Default:notfound }
+
+hetic_public_notfound:
+    path:     /notfound
+    defaults: { _controller: HeticPublicBundle:Default:notfound }
+
+hetic_public_messageflash:
+    path:     /messageflash
+    defaults: { _controller: HeticPublicBundle:Default:messageflash }
+
+notification:
+    path:     /notification/{type}
+    defaults: { _controller: HeticPublicBundle:Default:notification, type:success }
+
+twig:
+    path:     /twig
+    defaults: { _controller: HeticPublicBundle:Default:twig }
