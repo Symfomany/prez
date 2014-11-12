@@ -1,15 +1,12 @@
-Symfony Standard Edition
+Peez Project in SYmfony 2
 ========================
 
-Projet d'apprentissage Symfony 2
+Projet d'apprentissage Symfony 2 for Presentation
 
 1) Installing the Standard Edition
 ----------------------------------
 
 ### Use Composer (*recommended*)
-
-As Symfony uses [Composer][2] to manage its dependencies, the recommended way
-to create a new project is to use it.
 
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:

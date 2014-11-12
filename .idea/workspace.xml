@@ -31,8 +31,18 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8670439" vertical-offset="1380" max-vertical-offset="3360">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.48090523" vertical-offset="0" max-vertical-offset="3300">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2" vertical-offset="0" max-vertical-offset="220">
+              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -59,8 +69,8 @@
         <option value="$PROJECT_DIR$/src/Hetic/PublicBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Hetic/PublicBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Hetic/PublicBundle/Resources/views/Default/twig.html.twig" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -541,7 +551,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10869565" vertical-offset="0" max-vertical-offset="736">
+        <state vertical-scroll-proportion="-3.2" vertical-offset="0" max-vertical-offset="220">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding />
         </state>
@@ -552,8 +562,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8670439" vertical-offset="1380" max-vertical-offset="3360">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.48090523" vertical-offset="0" max-vertical-offset="3300">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding />
         </state>
       </provider>
