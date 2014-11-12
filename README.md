@@ -1,4 +1,4 @@
-Prez Project in SYmfony 2
+Prez Project in Symfony 2
 ========================
 
 Projet d'apprentissage Symfony 2 for Presentation
