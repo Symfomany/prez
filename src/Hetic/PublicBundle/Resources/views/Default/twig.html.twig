@@ -1,11 +1,11 @@
-<h3>Hello HETIC!</h3>
-<p>{{ message }}</p>
+{% extends 'HeticPublicBundle::layout.html.twig' %}
 
+{% block body %}
 
-<a href=""></a>
-<div id="sidebar">
-    <h3>Formulaire de contact</h3>
-    {{ render(controller(
-        'AcmeDemoBundle:Demo:contact'
-    )) }}
-</div>
+    <h3>Hello HETIC!</h3>
+    <p>{{ message }}</p>
+    <pre>
+    {{ dump(message) }}
+    </pre>
+
+{% endblock %}

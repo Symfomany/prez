@@ -1,4 +1,4 @@
-Peez Project in SYmfony 2
+Prez Project in SYmfony 2
 ========================
 
 Projet d'apprentissage Symfony 2 for Presentation
