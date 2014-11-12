@@ -7,8 +7,8 @@ php:
 before_script:
   - composer install --dev
 
-script: phpunit --coverage-text
+script: phpunit -c app/
 
 notifications:
   email:
-    - travis-ci@kitpages.fr
+    - julien@eetserious.com
