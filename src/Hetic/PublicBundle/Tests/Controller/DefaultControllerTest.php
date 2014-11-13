@@ -18,7 +18,6 @@ class DefaultControllerTest extends WebTestCase
 
         $this->assertTrue($crawler->filter('html:contains("Vous avez un nouveau message")')->count() > 0);
 
-
         $crawler = $client->request('GET', '/redirection');
 
         $this->assertTrue($crawler->filter('html:contains("Vous avez un nouveau message")')->count() > 0);
