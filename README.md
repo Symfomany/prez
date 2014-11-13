@@ -8,7 +8,14 @@ Prez Project in Symfony 2
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/df27ca15-3f18-4fd3-9467-85b42aecbfc3/big.png)](https://insight.sensiolabs.com/account/widget?project=df27ca15-3f18-4fd3-9467-85b42aecbfc3)
 
 
-Projet d'apprentissage Symfony 2 for Presentation
+Projet d'apprentissage Symfony 2 pour Presentation by Boyer Julien
+
+Presentation of Symfony 2 by Boyer Julien
+========================
+
+[Presentation de Symfony 2](https://slides.com/julienboyer/symfony-2 " Presentation de Symfony 2")
+
+
 
 1) Installing the Standard Edition
 ----------------------------------
