@@ -26,7 +26,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/notfound');
 
-        $this->assertTrue($crawler->filter('html:contains("La page n\'existe plus")')->count() > 0);
+        $this->assertTrue($crawler->filter('html:contains("404 Not Found")')->count() > 0);
 
         $crawler = $client->request('GET', '/messageflash');
         $crawler = $client->followRedirect();

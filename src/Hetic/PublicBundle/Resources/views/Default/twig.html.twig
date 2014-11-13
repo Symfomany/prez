@@ -8,4 +8,11 @@
     {#{{ dump(message) }}#}
     </pre>
 
+    <div class="jubotron">
+        {% for post in posts %}
+            <p>{{ post.title }}</p>
+            <p>{{ post.description }}</p>
+        {% endfor %}
+    </div>
+
 {% endblock %}

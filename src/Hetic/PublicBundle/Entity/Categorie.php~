@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Categorie
  *
  * @ORM\Table(name="categorie")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Hetic\PublicBundle\Entity\CategorieRepository")
  */
 class Categorie
 {
@@ -36,4 +36,60 @@ class Categorie
     private $dscription;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Categorie
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set dscription
+     *
+     * @param string $dscription
+     * @return Categorie
+     */
+    public function setDscription($dscription)
+    {
+        $this->dscription = $dscription;
+
+        return $this;
+    }
+
+    /**
+     * Get dscription
+     *
+     * @return string 
+     */
+    public function getDscription()
+    {
+        return $this->dscription;
+    }
 }

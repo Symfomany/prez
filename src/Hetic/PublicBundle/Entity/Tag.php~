@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Tag
  *
  * @ORM\Table(name="tag")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Hetic\PublicBundle\Entity\TagRepository")
  */
 class Tag
 {
@@ -43,4 +43,70 @@ class Tag
         $this->post = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set word
+     *
+     * @param string $word
+     * @return Tag
+     */
+    public function setWord($word)
+    {
+        $this->word = $word;
+
+        return $this;
+    }
+
+    /**
+     * Get word
+     *
+     * @return string 
+     */
+    public function getWord()
+    {
+        return $this->word;
+    }
+
+    /**
+     * Add post
+     *
+     * @param \Hetic\PublicBundle\Entity\Post $post
+     * @return Tag
+     */
+    public function addPost(\Hetic\PublicBundle\Entity\Post $post)
+    {
+        $this->post[] = $post;
+
+        return $this;
+    }
+
+    /**
+     * Remove post
+     *
+     * @param \Hetic\PublicBundle\Entity\Post $post
+     */
+    public function removePost(\Hetic\PublicBundle\Entity\Post $post)
+    {
+        $this->post->removeElement($post);
+    }
+
+    /**
+     * Get post
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
 }

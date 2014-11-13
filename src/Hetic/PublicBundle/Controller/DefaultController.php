@@ -82,9 +82,14 @@ class DefaultController extends Controller
      */
     public function twigAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $posts = $em->getRepository('HeticPublicBundle:Post')
+            ->getPostsByTitle();
+
         $message = "Bienvenue au cours HETIC";
         return $this->render('HeticPublicBundle:Default:twig.html.twig', array(
-            'message' => $message
+            'message' => $message,
+            'posts' => $posts
         ));
     }
 }
