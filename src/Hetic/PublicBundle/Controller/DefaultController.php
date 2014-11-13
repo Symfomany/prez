@@ -21,12 +21,12 @@ class DefaultController extends Controller
 
     public function redirectionAction()
     {
-        return new RedirectResponse($this->generateUrl('dashboard'));
+        return new RedirectResponse($this->generateUrl('hetic_public_forward'));
     }
 
     public function forwardAction()
     {
-        $response = $this->forward('AcmeDemoBundle:Demo:contact', array());
+        $response = $this->forward('HeticPublicBundle:Default:message', array());
         return $response;
     }
 
