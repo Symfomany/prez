@@ -1,8 +1,8 @@
 Prez Project in Symfony 2
 ========================
 
-[![Build Status](https://secure.travis-ci.org/lexik/LexikPayboxBundle.png)](http://travis-ci.org/lexik/LexikPayboxBundle)
-![Project Status](http://stillmaintained.com/lexik/LexikPayboxBundle.png)
+[![Build Status](https://secure.travis-ci.org/lexik/LexikPayboxBundle.png)](https://travis-ci.org/Symfomany/prez)
+![Project Status](http://stillmaintained.com/Symfomany/prez.png)
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Symfomany/prez/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Symfomany/prez/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/df27ca15-3f18-4fd3-9467-85b42aecbfc3/big.png)](https://insight.sensiolabs.com/account/widget?project=df27ca15-3f18-4fd3-9467-85b42aecbfc3)
