@@ -38,8 +38,8 @@ class DefaultControllerTest extends WebTestCase
         $this->assertTrue($crawler->filter('html:contains("Notification: Error")')->count() > 0);
 
 
-        $crawler = $client->request('GET', '/twig');
-
-        $this->assertTrue($crawler->filter('html:contains("Hello HETIC!")')->count() > 0);
+//        $crawler = $client->request('GET', '/twig');
+//
+//        $this->assertTrue($crawler->filter('html:contains("Hello HETIC!")')->count() > 0);
     }
 }
