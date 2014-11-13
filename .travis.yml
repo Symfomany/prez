@@ -1,13 +1,13 @@
-anguage: php
+language: php
 
 php:
   - 5.3
   - 5.4
 
 before_script:
-  - wget http://getcomposer.org/composer.phar
-  - php composer.phar install
-  - phpunit
+  - curl -s http://getcomposer.org/installer | php --
+  - php composer.phar install --dev
+  - php composer.phar require symfony/framework-bundle:dev-master
 
 script: phpunit -c app/
 
