@@ -1,31 +1,48 @@
 hetic_public_homepage:
     path:     /hello/{name}
     defaults: { _controller: HeticPublicBundle:Default:index }
+    requirements:
+      _method:  GET
+      name:  \w+
 
 hetic_public_response:
     path:     /message
     defaults: { _controller: HeticPublicBundle:Default:message }
+    requirements:
+      _method:  GET
 
 hetic_public_redirection:
     path:     /redirection
     defaults: { _controller: HeticPublicBundle:Default:redirection }
+    requirements:
+      _method:  GET
 
 hetic_public_forward:
     path:     /forward
     defaults: { _controller: HeticPublicBundle:Default:forward }
+    requirements:
+      _method:  GET
 
 hetic_public_notfound:
     path:     /notfound
     defaults: { _controller: HeticPublicBundle:Default:notfound }
+    requirements:
+      _method:  GET
 
 hetic_public_messageflash:
     path:     /messageflash
     defaults: { _controller: HeticPublicBundle:Default:messageflash }
+    requirements:
+      _method:  GET
 
 notification:
     path:     /notification/{type}
     defaults: { _controller: HeticPublicBundle:Default:notification, type:success }
+    requirements:
+      _method:  GET
 
 twig:
     path:     /twig
     defaults: { _controller: HeticPublicBundle:Default:twig }
+    requirements:
+      _method:  GET
