@@ -18,10 +18,6 @@ hetic_public_notfound:
     path:     /notfound
     defaults: { _controller: HeticPublicBundle:Default:notfound }
 
-hetic_public_notfound:
-    path:     /notfound
-    defaults: { _controller: HeticPublicBundle:Default:notfound }
-
 hetic_public_messageflash:
     path:     /messageflash
     defaults: { _controller: HeticPublicBundle:Default:messageflash }

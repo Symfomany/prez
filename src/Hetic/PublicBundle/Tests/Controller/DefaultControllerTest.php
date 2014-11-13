@@ -23,5 +23,23 @@ class DefaultControllerTest extends WebTestCase
 //        exit(var_dump($client->getResponse()->getContent()));
 
         $this->assertTrue($crawler->filter('html:contains("Vous avez un nouveau message")')->count() > 0);
+
+        $crawler = $client->request('GET', '/notfound');
+
+        $this->assertTrue($crawler->filter('html:contains("La page n\'existe plus")')->count() > 0);
+
+        $crawler = $client->request('GET', '/messageflash');
+        $crawler = $client->followRedirect();
+        $this->assertTrue($crawler->filter('html:contains("Bonjour Juju!")')->count() > 0);
+
+
+        $crawler = $client->request('GET', '/notification/error');
+
+        $this->assertTrue($crawler->filter('html:contains("Notification: Error")')->count() > 0);
+
+
+        $crawler = $client->request('GET', '/twig');
+
+        $this->assertTrue($crawler->filter('html:contains("Hello HETIC!")')->count() > 0);
     }
 }

@@ -62,7 +62,7 @@ class DefaultController extends Controller
             'notice',
             "<b>Success</b  >Message flash qui ne saffiche qu'une seul fois!"
         );
-        return $this->redirect($this->generateUrl("dashboard"));
+        return $this->redirect($this->generateUrl("hetic_public_homepage", array('name' => "Juju")));
     }
 
     /**
