@@ -7,6 +7,8 @@ php:
 before_script:
   - curl -s http://getcomposer.org/installer | php --
   - php composer.phar install --dev
+  - mysql -e "create database IF NOT EXISTS symfony;" -uroot
+  - mysql -p -h localhost symfony < mysql/symfony.sql
 
 script: phpunit -c app/
 
