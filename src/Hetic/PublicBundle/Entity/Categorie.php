@@ -2,6 +2,7 @@
 
 namespace Hetic\PublicBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,17 @@ class Categorie
      */
     private $dscription;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="categorie")
+     */
+    protected $posts;
+
+
+    public function __construct()
+    {
+        $this->posts = new ArrayCollection();
+    }
 
 
     /**

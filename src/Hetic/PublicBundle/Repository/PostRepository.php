@@ -15,6 +15,19 @@ class PostRepository extends EntityRepository
 
 
     /**
+     * Get post by id desc
+     * @return array
+     */
+    public function getPostsByIdDesc()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM HeticPublicBundle:Post p ORDER BY p.id DESC'
+            )
+            ->getResult();
+    }
+
+    /**
      * Get post by Title
      * @return array
      */
