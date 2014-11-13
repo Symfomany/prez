@@ -6,7 +6,5 @@
 /.idea/*
 /app/config/parameters.yml
 /web/config.php
-/web/.htaccess
-app/.htaccess
-src/.htaccess
+
 
