@@ -5,3 +5,4 @@
 /vendor/
 /.idea/*
 /app/config/parameters.yml
+/web/config.php
