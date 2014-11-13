@@ -1,7 +1,12 @@
 Prez Project in Symfony 2
 ========================
-[a link](https://insight.sensiolabs.com/projects/df27ca15-3f18-4fd3-9467-85b42aecbfc3)
-![Alt text](https://d15hperv2jcnaj.cloudfront.net/assets/v3b8c02b585/bundles/sensiolabsinsightanalysis/img/medals/with-ribbon/medal-gold.png "SensiolabsInsight Gold Medal")
+
+[![Build Status](https://secure.travis-ci.org/lexik/LexikPayboxBundle.png)](http://travis-ci.org/lexik/LexikPayboxBundle)
+![Project Status](http://stillmaintained.com/lexik/LexikPayboxBundle.png)
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Symfomany/prez/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Symfomany/prez/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/df27ca15-3f18-4fd3-9467-85b42aecbfc3/big.png)](https://insight.sensiolabs.com/account/widget?project=df27ca15-3f18-4fd3-9467-85b42aecbfc3)
+
 
 Projet d'apprentissage Symfony 2 for Presentation
 
