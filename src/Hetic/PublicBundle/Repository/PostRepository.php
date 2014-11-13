@@ -28,15 +28,19 @@ class PostRepository extends EntityRepository
     }
 
     /**
-     * Get post by Title
+     * Get post visible
      * @return array
      */
-    public function getPostsByTitle()
+    public function getPostsVisible()
     {
         return $this->getEntityManager()
-            ->createQuery(
-                'SELECT p FROM HeticPublicBundle:Post p ORDER BY p.title ASC'
-            )
+            ->createQueryBuilder('p')
+            ->where('p.visible = :visible')
+            ->setParameter('visible', 1)
+            ->orderBy('p.dateCreated', 'DESC')
+            ->getQuery()
             ->getResult();
     }
+
+
 }

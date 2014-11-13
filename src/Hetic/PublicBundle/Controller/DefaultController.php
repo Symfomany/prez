@@ -75,6 +75,33 @@ class DefaultController extends Controller
         return new Response('<h3>Notification: <b>'.ucfirst($type).'</b></h3>');
     }
 
+    /**
+     * Update object
+     * @param $id
+     * @param $title
+     * @return RedirectResponse
+     */
+    public function updatePostACtion($id , $title){
+
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('HeticPublicBundle:Post')->find($id);
+        if (!$post) {
+            throw $this->createNotFoundException(
+                'Aucun post trouvé pour cet id : '.$id
+            );
+        }
+        $post->setTitle($title);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            "<b>Success</b> Votre post a bie été mis a jour"
+        );
+
+        return $this->redirect($this->generateUrl('twig'));
+
+    }
+
 
     /**
      * Page twig

@@ -46,3 +46,9 @@ twig:
     defaults: { _controller: HeticPublicBundle:Default:twig }
     requirements:
       _method:  GET
+
+updatepost:
+    path:     /update-post/{id}/{title}
+    defaults: { _controller: HeticPublicBundle:Default:updatePost }
+    requirements:
+      _method:  GET

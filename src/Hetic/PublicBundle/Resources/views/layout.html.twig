@@ -2,6 +2,13 @@
 
 {% block title %}Bienvenue au cours de SYmfony 2!{% endblock %}
 
+{% block alert %}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}
 {#Stylesheets layout#}
 {% block stylesheets %}
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">

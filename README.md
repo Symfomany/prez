@@ -16,7 +16,6 @@ Presentation of Symfony 2 by Boyer Julien
 [Presentation de Symfony 2](https://slides.com/julienboyer/symfony-2 " Presentation de Symfony 2")
 
 
-
 1) Installing the Standard Edition
 ----------------------------------
 
