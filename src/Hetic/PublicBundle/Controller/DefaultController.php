@@ -2,6 +2,7 @@
 
 namespace Hetic\PublicBundle\Controller;
 
+use Hetic\PublicBundle\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +24,7 @@ class DefaultController extends Controller
      */
     public function messageAction()
     {
-        return new Response('<h3>Vous avez un nouveau message</h3>');
+        return new Response('<h3 class"subtitle">Vous avez un nouveau message</h3>');
     }
 
     /**Redirection action
@@ -99,7 +100,47 @@ class DefaultController extends Controller
         );
 
         return $this->redirect($this->generateUrl('twig'));
+    }
 
+
+    /**
+     * Voir un post
+     * @param $id
+     * @return Response
+     */
+    public function voirPostAction($id){
+
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('HeticPublicBundle:Post')->find($id);
+        if (!$post) {
+            throw $this->createNotFoundException(
+                'Aucun post trouvé pour cet id : '.$id
+            );
+        }
+
+        return new Response("<h3>".$post->getTitle()."</h3>");
+    }
+
+
+    /**
+     * Create object
+     * @param $title
+     * @return RedirectResponse
+     */
+    public function createPostACtion($title){
+
+        $em = $this->getDoctrine()->getManager();
+        $post = new Post();
+        $post->setTitle($title);
+        $em->persist($post);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            "<b>Success</b> Votre post a bie été crée"
+        );
+
+        return $this->redirect($this->generateUrl('twig'));
     }
 
 

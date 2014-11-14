@@ -27,6 +27,21 @@ class PostRepository extends EntityRepository
             ->getResult();
     }
 
+
+
+    /**
+     * Get post by Title
+     * @return array
+     */
+    public function getPostsByTitle()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM HeticPublicBundle:Post p ORDER BY p.title ASC'
+            )
+            ->getResult();
+    }
+
     /**
      * Get post visible
      * @return array

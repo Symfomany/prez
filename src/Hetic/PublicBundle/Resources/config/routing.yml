@@ -47,6 +47,18 @@ twig:
     requirements:
       _method:  GET
 
+voirpost:
+    path:     /voir-post/{id}
+    defaults: { _controller: HeticPublicBundle:Default:voirPost }
+    requirements:
+      _method:  GET
+
+createpost:
+    path:     /create-post/{title}
+    defaults: { _controller: HeticPublicBundle:Default:createPost }
+    requirements:
+      _method:  GET
+
 updatepost:
     path:     /update-post/{id}/{title}
     defaults: { _controller: HeticPublicBundle:Default:updatePost }

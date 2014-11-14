@@ -80,6 +80,7 @@ class Post
     public function __construct()
     {
         $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dateCreated = new \Datetime('now');
     }
 
 
@@ -239,5 +240,13 @@ class Post
     public function getTag()
     {
         return $this->tag;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->dateCreated = new \DateTime('now');
     }
 }
