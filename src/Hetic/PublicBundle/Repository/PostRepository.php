@@ -50,10 +50,12 @@ class PostRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQueryBuilder('p')
+            ->select('p')
+            ->from('HeticPublicBundle:Post','p')
             ->where('p.visible = :visible')
-            ->setParameter('visible', 1)
             ->orderBy('p.dateCreated', 'DESC')
             ->getQuery()
+            ->setParameter('visible', true)
             ->getResult();
     }
 
