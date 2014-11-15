@@ -2,7 +2,7 @@ hetic_public_homepage:
     path:     /hello/{name}
     defaults: { _controller: HeticPublicBundle:Default:index }
     requirements:
-      _method:  GET
+      _method:  GET|POST
       name:  \w+
 
 hetic_public_response:
@@ -10,6 +10,18 @@ hetic_public_response:
     defaults: { _controller: HeticPublicBundle:Default:message }
     requirements:
       _method:  GET
+
+hetic_public_form:
+    path:     /form
+    defaults: { _controller: HeticPublicBundle:Default:form }
+    requirements:
+      _method:  GET|POST
+
+hetic_public_createpost:
+    path:     /create-post
+    defaults: { _controller: HeticPublicBundle:Post:create }
+    requirements:
+      _method:  GET|POST
 
 hetic_public_redirection:
     path:     /redirection

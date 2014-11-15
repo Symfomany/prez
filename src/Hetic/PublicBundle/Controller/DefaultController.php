@@ -4,8 +4,10 @@ namespace Hetic\PublicBundle\Controller;
 
 use Hetic\PublicBundle\Entity\Post;
 use Hetic\PublicBundle\Form\DevisType;
+use Hetic\PublicBundle\Form\PostType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
@@ -16,17 +18,42 @@ class DefaultController extends Controller
      */
     public function indexAction($name)
     {
-        $form = $this->createForm(new DevisType(), null , array(
-            'action' => $this->generateUrl('hetic_public_homepage', array('name' => $name
-            )),
-            'method' => 'POST',
-        ));
+
 
         return $this->render('HeticPublicBundle:Default:index.html.twig', array(
             'name' => $name,
+        ));
+    }
+
+    /**
+     * Get a form
+     * @param Request $request
+     * @return Response
+     */
+    public function formAction(Request $request){
+        $form = $this->createForm(new DevisType(), null , array(
+            'action' => $this->generateUrl('hetic_public_form'),
+            'method' => 'POST',
+            'attr' => array('novalidate' => "novalidate")
+        ));
+
+        $form->handleRequest($request);
+
+        if($form->isValid()){
+
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                "<b>Success</b> Votre formulaire de devis a bien été envoyé"
+            );
+
+            return $this->redirect($this->generateUrl('twig'));
+        }
+
+        return $this->render('HeticPublicBundle:Default:form.html.twig', array(
             'form' => $form->createView(),
         ));
     }
+
 
     /**
      * Page message
@@ -35,8 +62,6 @@ class DefaultController extends Controller
     public function messageAction()
     {
 
-        $em = $this->getDoctrine()->getManager();
-        $messages = $em->getRepository('HeticPublicBundle:Post')->getPostsVisible();
         return new Response('<h3 class"subtitle">Vous avez un nouveau message</h3>');
     }
 

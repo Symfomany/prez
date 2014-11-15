@@ -1,21 +1,7 @@
-{% extends '::base.html.twig' %}
+{% extends 'HeticPublicBundle::layout.html.twig' %}
 
  {% block body %}
      <h1> Bonjour {{ name }}!</h1>
      <h3>Bienvenue à ce tutoriel Symfony 2</h3>
-
-     {{ form_start(form) }}
-         {{ form_errors(form) }}
-
-         {{ form_row(form.nom) }}
-         {{ form_row(form.description) }}
-         {{ form_row(form.email) }}
-         {{ form_row(form.tel) }}
-         {{ form_row(form.type) }}
-         {{ form_row(form.type) }}
-         {{ form_row(form.url) }}
-
-         <input type="submit" />
-     {{ form_end(form) }}
 
  {% endblock %}

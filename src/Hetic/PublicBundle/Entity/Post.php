@@ -3,6 +3,8 @@
 namespace Hetic\PublicBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Post
@@ -23,14 +25,16 @@ class Post
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Ce contenu ne doit pas être vide")
+     * @Assert\Length(min=10,max=500)
      * @ORM\Column(name="title", type="string", length=300, nullable=true)
      */
     private $title;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Ce contenu ne doit pas être vide")
+     * @Assert\Length(min=10,max=500)
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
