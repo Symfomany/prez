@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\SecurityContext;
  */
 class AuthController extends Controller
 {
+
     /**
      * Login Authentification
      * @param Request $request

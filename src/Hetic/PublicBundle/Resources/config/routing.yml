@@ -60,13 +60,13 @@ twig:
 
 voirpost:
     path:     /voir-post/{id}
-    defaults: { _controller: HeticPublicBundle:Default:voirPost }
+    defaults: { _controller: HeticPublicBundle:Post:voirPost }
     requirements:
       _method:  GET
 
 createpost:
     path:     /create-post/{title}
-    defaults: { _controller: HeticPublicBundle:Default:createPost }
+    defaults: { _controller: HeticPublicBundle:Post:createPost }
     requirements:
       _method:  GET
 
@@ -79,7 +79,15 @@ denied:
 login:
     path:     /login
     defaults: { _controller: HeticPublicBundle:Auth:login }
+    requirements:
+      _method:  GET|POST|PUT
 
+logout:
+    path:     /logout
+
+login_check:
+    path:     /login_check
+    defaults: { _controller: HeticPublicBundle:Auth:login }
 
 posts_http:
     path:     /posts-http
@@ -87,19 +95,8 @@ posts_http:
     requirements:
       _method:  GET
 
-logout:
-    path:     /logout
-    requirements:
-      _method:  GET
-
-login_check:
-    path:     /login_check
-    defaults: { _controller: HeticPublicBundle:Auth:login }
-    requirements:
-      _method:  POST
-      
 updatepost:
     path:     /update-post/{id}/{title}
-    defaults: { _controller: HeticPublicBundle:Default:updatePost }
+    defaults: { _controller: HeticPublicBundle:Post:updatePost }
     requirements:
-      _method:  GET
+      _method:  POST

@@ -78,4 +78,73 @@ class PostController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+
+    /**
+     * Voir un post
+     * @param $id
+     * @return Response
+     */
+    public function voirPostAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('HeticPublicBundle:Post')->find($id);
+        if (!$post) {
+            throw $this->createNotFoundException(
+                'Aucun post trouvé pour cet id : '.$id
+            );
+        }
+
+        return new Response("<h3>".$post->getTitle()."</h3>");
+    }
+
+
+    /**
+     * Update object
+     * @param $id
+     * @param $title
+     * @return RedirectResponse
+     */
+    public function updatePostAction($id, $title)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('HeticPublicBundle:Post')->find($id);
+        if (!$post) {
+            throw $this->createNotFoundException(
+                'Aucun post trouvé pour cet id : '.$id
+            );
+        }
+        $post->setTitle($title);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            "<b>Success</b> Votre post a bie été mis a jour"
+        );
+
+        return $this->redirect($this->generateUrl('twig'));
+    }
+
+
+    /**
+     * Create object
+     * @param $title
+     * @return RedirectResponse
+     */
+    public function createPostAction($title)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $post = new Post();
+        $post->setTitle($title);
+        $em->persist($post);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            "<b>Success</b> Votre post a bie été crée"
+        );
+
+        return $this->redirect($this->generateUrl('twig'));
+    }
+
 }
