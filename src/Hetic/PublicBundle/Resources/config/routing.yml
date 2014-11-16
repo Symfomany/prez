@@ -79,7 +79,8 @@ denied:
 login:
     path:     /login
     defaults: { _controller: HeticPublicBundle:Auth:login }
-
+    requirements:
+          _method:  GET|POST|PUT
 logout:
     path:     /logout
 
@@ -87,7 +88,8 @@ login_check:
     path:     /login_check
     defaults: { _controller: HeticPublicBundle:Auth:login }
     requirements:
-      _method:  GET|POST|PUT
+      _method:  POST
+
 posts_http:
     path:     /posts-http
     defaults: { _controller: HeticPublicBundle:Post:index }
