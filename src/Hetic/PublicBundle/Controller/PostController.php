@@ -42,10 +42,9 @@ class PostController extends Controller
 
 
     /**
-     * Create a post
+     * CReate a post
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
-     * @throws AccessDeniedExceptionn
      */
     public function createAction(Request $request)
     {
