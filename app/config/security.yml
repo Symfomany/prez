@@ -40,7 +40,6 @@ security:
 #                use_forward: true
 
             remember_me:
-                key: qqd6qs4f64d6f46ds4f6sd46f4sd6f6sdf6sd46f4ds64sd6f46sdf6
                 name: hetic
                 lifetime: 3600 # in seconds
                 path: /
