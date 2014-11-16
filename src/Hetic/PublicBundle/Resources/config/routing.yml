@@ -71,17 +71,30 @@ createpost:
     requirements:
       _method:  GET
 
+denied:
+    path:     /access-interdis
+    defaults: { _controller: HeticPublicBundle:Auth:forbidden }
+    requirements:
+      _method:  GET
+
 login:
     path:     /login
     defaults: { _controller: HeticPublicBundle:Auth:login }
     requirements:
       _method:  GET
 
-login_check:
-    path:     /login-check
-    defaults: { _controller: HeticPublicBundle:Auth:login }
+posts_http:
+    path:     /posts-http
+    defaults: { _controller: HeticPublicBundle:Post:index }
     requirements:
-      _method:  POST
+      _method:  GET
+
+logout:
+    path:     /logout
+
+login_check:
+    path:     /login_check
+    defaults: { _controller: HeticPublicBundle:Auth:login }
 
 updatepost:
     path:     /update-post/{id}/{title}

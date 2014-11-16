@@ -27,9 +27,19 @@ class AuthController extends Controller
             $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
             $session->remove(SecurityContext::AUTHENTICATION_ERROR);
         }
+
         return $this->render('HeticPublicBundle:Auth:login.html.twig', array(
             'last_username' => $session->get(SecurityContext::LAST_USERNAME),
             'error' => $error,
         ));
+    }
+
+    /**
+     * Access Forbidden
+     * @return Response
+     */
+    public function forbiddenAction()
+    {
+        return $this->render('HeticPublicBundle:Auth:forbidden.html.twig');
     }
 }

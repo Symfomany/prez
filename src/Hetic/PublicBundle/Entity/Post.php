@@ -25,7 +25,7 @@ class Post
     /**
      * @var string
      * @Assert\NotBlank(message="Ce contenu ne doit pas être vide")
-     * @Assert\Length(min=10,max=500)
+     * @Assert\Length(min=10,max=500, minMessage=" Le titre est trop court", maxMessage=" Le titre est trop long")
      * @ORM\Column(name="title", type="string", length=300, nullable=true)
      */
     private $title;
@@ -33,7 +33,7 @@ class Post
     /**
      * @var string
      * @Assert\NotBlank(message="Ce contenu ne doit pas être vide")
-     * @Assert\Length(min=10,max=500)
+     * @Assert\Length(min=10,max=500, minMessage=" La description est trop courte", maxMessage="La description est trop longue")
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
