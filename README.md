@@ -48,3 +48,4 @@ following command:
 2) Loading datas
 -------------------------------
  php app/console doctrine:fixtures:load
+ 

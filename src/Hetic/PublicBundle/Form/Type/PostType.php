@@ -1,6 +1,6 @@
 <?php
 
-namespace Hetic\PublicBundle\Form;
+namespace Hetic\PublicBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

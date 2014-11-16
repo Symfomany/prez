@@ -3,7 +3,7 @@
 namespace Hetic\PublicBundle\Controller;
 
 use Hetic\PublicBundle\Entity\Post;
-use Hetic\PublicBundle\Form\DevisType;
+use Hetic\PublicBundle\Form\Type\DevisType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -116,7 +116,7 @@ class DefaultController extends Controller
      * @param $title
      * @return RedirectResponse
      */
-    public function updatePostACtion($id, $title)
+    public function updatePostAction($id, $title)
     {
         $em = $this->getDoctrine()->getManager();
         $post = $em->getRepository('HeticPublicBundle:Post')->find($id);
@@ -159,7 +159,7 @@ class DefaultController extends Controller
      * @param $title
      * @return RedirectResponse
      */
-    public function createPostACtion($title)
+    public function createPostAction($title)
     {
         $em = $this->getDoctrine()->getManager();
         $post = new Post();

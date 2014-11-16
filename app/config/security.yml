@@ -2,7 +2,10 @@ security:
     access_denied_url:    /access-interdis # Exemple: /foo/error403
 
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony\Component\Security\Core\User\User:
+          algorithm:   sha1
+          iterations: 1
+          encode_as_base64: false
 
     role_hierarchy:
         ROLE_USER:       ROLE_USER

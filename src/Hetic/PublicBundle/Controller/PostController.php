@@ -3,7 +3,7 @@
 namespace Hetic\PublicBundle\Controller;
 
 use Hetic\PublicBundle\Entity\Post;
-use Hetic\PublicBundle\Form\PostType;
+use Hetic\PublicBundle\Form\Type\PostType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

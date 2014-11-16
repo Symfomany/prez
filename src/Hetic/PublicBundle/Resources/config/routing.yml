@@ -2,8 +2,7 @@ hetic_public_homepage:
     path:     /
     defaults: { _controller: HeticPublicBundle:Default:index }
     requirements:
-      _method:  GET|POST
-      name:  \w+
+      _method:  GET
 
 hetic_public_response:
     path:     /message
@@ -80,8 +79,7 @@ denied:
 login:
     path:     /login
     defaults: { _controller: HeticPublicBundle:Auth:login }
-    requirements:
-      _method:  GET
+
 
 posts_http:
     path:     /posts-http
@@ -91,11 +89,15 @@ posts_http:
 
 logout:
     path:     /logout
+    requirements:
+      _method:  GET
 
 login_check:
     path:     /login_check
     defaults: { _controller: HeticPublicBundle:Auth:login }
-
+    requirements:
+      _method:  POST
+      
 updatepost:
     path:     /update-post/{id}/{title}
     defaults: { _controller: HeticPublicBundle:Default:updatePost }
