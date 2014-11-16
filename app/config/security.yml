@@ -39,12 +39,6 @@ security:
 #                use_referer: true
 #                use_forward: true
 
-            remember_me:
-                name: hetic
-                lifetime: 3600 # in seconds
-                path: /
-                always_remember_me: true
-                remember_me_parameter: _remember_me
             logout:
                 path:   /logout
                 target: /
