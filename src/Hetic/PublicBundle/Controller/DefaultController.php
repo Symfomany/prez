@@ -2,7 +2,6 @@
 
 namespace Hetic\PublicBundle\Controller;
 
-use Hetic\PublicBundle\Entity\Post;
 use Hetic\PublicBundle\Form\Type\DevisType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;

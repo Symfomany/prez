@@ -68,7 +68,7 @@ createpost:
     path:     /create-post/{title}
     defaults: { _controller: HeticPublicBundle:Post:createPost }
     requirements:
-      _method:  GET
+      _method:  GET|POST|PUT|DELETE|PATCH
 
 denied:
     path:     /access-interdis
