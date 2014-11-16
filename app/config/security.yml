@@ -7,7 +7,8 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
+        ROLE_USER:       ROLE_USER
+        ROLE_ADMIN:       ROLE_ADMIN
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
@@ -15,8 +16,8 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: "%password_user%", roles: [ 'ROLE_USER' ] }
-                    admin: { password: "%password_user%", roles: [ 'ROLE_ADMIN' ] }
+                    user:  { password: user, roles: [ 'ROLE_USER' ] }
+                    admin: { password: password, roles: [ 'ROLE_ADMIN' ] }
 
     # the main part of the security, where you can set up firewalls
     # for specific sections of your app
@@ -26,18 +27,35 @@ security:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
         # the login page has to be accessible for everybody
-        demo_login:
-            pattern:  ^/demo/secured/login$
+        site_login:
+            pattern:  ^/login$
             security: false
 
         # secures part of the application
-        demo_secured_area:
-            pattern:    ^/demo/secured/
+        main:
+            pattern:    ^/
             # it's important to notice that in this case _demo_security_check and _demo_login
             # are route names and that they are specified in the AcmeDemoBundle
+
             form_login:
-                check_path: _demo_security_check
-                login_path: _demo_login
+                check_path: /login-check
+                login_path: /login
+                 # si true, l'utilisateur est envoyé au formulaire de connexion et non redirigé
+                use_forward: false
+                csrf_provider: form.csrf_provider
+
+                # Les options de redirection en cas de succès de connexion (lire plus bas)
+                always_use_default_target_path: true
+                default_target_path:            /
+                use_referer:                    true
+
+            remember_me:
+                key: qqd6qs4f64d6f46ds4f6sd46f4sd6f6sdf6sd46f4ds64sd6f46sdf6
+                name: hetic
+                lifetime: 3600 # in seconds
+                path: /
+                always_remember_me: true
+                remember_me_parameter: _remember_me
             logout:
                 path:   _demo_logout
                 target: _demo
@@ -50,4 +68,4 @@ security:
     # http://symfony.com/doc/current/book/security.html#security-book-access-control-matching-options
     access_control:
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }

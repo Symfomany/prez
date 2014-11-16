@@ -5,7 +5,6 @@ namespace Hetic\PublicBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
  * Post
  *
@@ -87,11 +86,10 @@ class Post
         $this->dateCreated = new \Datetime('now');
     }
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -101,7 +99,7 @@ class Post
     /**
      * Set title
      *
-     * @param string $title
+     * @param  string $title
      * @return Post
      */
     public function setTitle($title)
@@ -114,7 +112,7 @@ class Post
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -124,7 +122,7 @@ class Post
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string $description
      * @return Post
      */
     public function setDescription($description)
@@ -137,7 +135,7 @@ class Post
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -147,7 +145,7 @@ class Post
     /**
      * Set visible
      *
-     * @param boolean $visible
+     * @param  boolean $visible
      * @return Post
      */
     public function setVisible($visible)
@@ -160,7 +158,7 @@ class Post
     /**
      * Get visible
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getVisible()
     {
@@ -170,7 +168,7 @@ class Post
     /**
      * Set dateCreated
      *
-     * @param \DateTime $dateCreated
+     * @param  \DateTime $dateCreated
      * @return Post
      */
     public function setDateCreated($dateCreated)
@@ -183,7 +181,7 @@ class Post
     /**
      * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -193,7 +191,7 @@ class Post
     /**
      * Set categorie
      *
-     * @param \Hetic\PublicBundle\Entity\Categorie $categorie
+     * @param  \Hetic\PublicBundle\Entity\Categorie $categorie
      * @return Post
      */
     public function setCategorie(\Hetic\PublicBundle\Entity\Categorie $categorie = null)
@@ -206,7 +204,7 @@ class Post
     /**
      * Get categorie
      *
-     * @return \Hetic\PublicBundle\Entity\Categorie 
+     * @return \Hetic\PublicBundle\Entity\Categorie
      */
     public function getCategorie()
     {
@@ -216,7 +214,7 @@ class Post
     /**
      * Add tag
      *
-     * @param \Hetic\PublicBundle\Entity\Tag $tag
+     * @param  \Hetic\PublicBundle\Entity\Tag $tag
      * @return Post
      */
     public function addTag(\Hetic\PublicBundle\Entity\Tag $tag)
@@ -239,7 +237,7 @@ class Post
     /**
      * Get tag
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTag()
     {

@@ -36,23 +36,20 @@ class Categorie
      */
     private $dscription;
 
-
     /**
      * @ORM\OneToMany(targetEntity="Post", mappedBy="categorie")
      */
     protected $posts;
-
 
     public function __construct()
     {
         $this->posts = new ArrayCollection();
     }
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -62,7 +59,7 @@ class Categorie
     /**
      * Set title
      *
-     * @param string $title
+     * @param  string    $title
      * @return Categorie
      */
     public function setTitle($title)
@@ -75,7 +72,7 @@ class Categorie
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -85,7 +82,7 @@ class Categorie
     /**
      * Set dscription
      *
-     * @param string $dscription
+     * @param  string    $dscription
      * @return Categorie
      */
     public function setDscription($dscription)
@@ -98,7 +95,7 @@ class Categorie
     /**
      * Get dscription
      *
-     * @return string 
+     * @return string
      */
     public function getDscription()
     {

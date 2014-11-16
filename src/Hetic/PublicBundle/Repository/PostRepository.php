@@ -12,8 +12,6 @@ use Doctrine\ORM\EntityRepository;
  */
 class PostRepository extends EntityRepository
 {
-
-
     /**
      * Get post by id desc
      * @return array
@@ -26,8 +24,6 @@ class PostRepository extends EntityRepository
             )
             ->getResult();
     }
-
-
 
     /**
      * Get post by Title
@@ -51,13 +47,11 @@ class PostRepository extends EntityRepository
         return $this->getEntityManager()
             ->createQueryBuilder('p')
             ->select('p')
-            ->from('HeticPublicBundle:Post','p')
+            ->from('HeticPublicBundle:Post', 'p')
             ->where('p.visible = :visible')
             ->orderBy('p.dateCreated', 'DESC')
             ->getQuery()
             ->setParameter('visible', true)
             ->getResult();
     }
-
-
 }

@@ -43,11 +43,10 @@ class Tag
         $this->post = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -57,7 +56,7 @@ class Tag
     /**
      * Set word
      *
-     * @param string $word
+     * @param  string $word
      * @return Tag
      */
     public function setWord($word)
@@ -70,7 +69,7 @@ class Tag
     /**
      * Get word
      *
-     * @return string 
+     * @return string
      */
     public function getWord()
     {
@@ -80,7 +79,7 @@ class Tag
     /**
      * Add post
      *
-     * @param \Hetic\PublicBundle\Entity\Post $post
+     * @param  \Hetic\PublicBundle\Entity\Post $post
      * @return Tag
      */
     public function addPost(\Hetic\PublicBundle\Entity\Post $post)
@@ -103,7 +102,7 @@ class Tag
     /**
      * Get post
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPost()
     {

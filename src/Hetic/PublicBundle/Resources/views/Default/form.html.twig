@@ -8,7 +8,9 @@
              {{ form_start(form) }}
              {{ form_errors(form) }}
 
-             {{ form_row(form.nom) }}
+             {{ form_label(form.nom) }}
+             {{ form_widget(form.nom) }}
+             {{ form_errors(form.nom) }}
              {{ form_row(form.description) }}
              {{ form_row(form.email) }}
              {{ form_row(form.tel) }}

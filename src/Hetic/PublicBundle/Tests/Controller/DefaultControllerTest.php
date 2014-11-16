@@ -36,11 +36,9 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
         $this->assertTrue($crawler->filter('html:contains("Bonjour Juju!")')->count() > 0);
 
-
         $crawler = $client->request('GET', '/notification/error');
 
         $this->assertTrue($crawler->filter('html:contains("Notification: Error")')->count() > 0);
-
 
         $crawler = $client->request('GET', '/message');
 

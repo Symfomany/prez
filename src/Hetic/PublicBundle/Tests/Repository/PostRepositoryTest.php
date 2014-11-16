@@ -4,10 +4,8 @@ namespace Hetic\PublicBundle\Tests\Repository;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-
-class CalculatorTest extends WebTestCase
+class PostRepositoryTest extends WebTestCase
 {
-
     /**
      * @var \Doctrine\ORM\EntityManager
      */
@@ -41,7 +39,6 @@ class CalculatorTest extends WebTestCase
         $this->assertCount(1, $posts);
     }
 
-
     /**
      * Test getPostBuTitle
      */
@@ -52,7 +49,5 @@ class CalculatorTest extends WebTestCase
             ->getPostsVisible();
 
         $this->assertCount(0, $posts);
-
     }
-
 }

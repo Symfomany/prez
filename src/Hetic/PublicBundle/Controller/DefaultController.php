@@ -4,7 +4,6 @@ namespace Hetic\PublicBundle\Controller;
 
 use Hetic\PublicBundle\Entity\Post;
 use Hetic\PublicBundle\Form\DevisType;
-use Hetic\PublicBundle\Form\PostType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,34 +12,31 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /** Page index
-     * @param $name
      * @return Response
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-
-
         return $this->render('HeticPublicBundle:Default:index.html.twig', array(
-            'name' => $name,
+            'name' => "Boyer Julien",
         ));
     }
 
     /**
      * Get a form
-     * @param Request $request
+     * @param  Request  $request
      * @return Response
      */
-    public function formAction(Request $request){
-        $form = $this->createForm(new DevisType(), null , array(
+    public function formAction(Request $request)
+    {
+        $form = $this->createForm(new DevisType(), null, array(
             'action' => $this->generateUrl('hetic_public_form'),
             'method' => 'POST',
-            'attr' => array('novalidate' => "novalidate")
+            'attr' => array('novalidate' => "novalidate"),
         ));
 
         $form->handleRequest($request);
 
-        if($form->isValid()){
-
+        if ($form->isValid()) {
             $this->get('session')->getFlashBag()->add(
                 'notice',
                 "<b>Success</b> Votre formulaire de devis a bien été envoyé"
@@ -54,14 +50,12 @@ class DefaultController extends Controller
         ));
     }
 
-
     /**
      * Page message
      * @return Response
      */
     public function messageAction()
     {
-
         return new Response('<h3 class"subtitle">Vous avez un nouveau message</h3>');
     }
 
@@ -80,6 +74,7 @@ class DefaultController extends Controller
     public function forwardAction()
     {
         $response = $this->forward('HeticPublicBundle:Default:message', array());
+
         return $response;
     }
 
@@ -101,12 +96,13 @@ class DefaultController extends Controller
             'notice',
             "<b>Success</b  >Message flash qui ne saffiche qu'une seul fois!"
         );
+
         return $this->redirect($this->generateUrl("hetic_public_homepage", array('name' => "Juju")));
     }
 
     /**
      * Notification ACtion
-     * @param string $type
+     * @param  string   $type
      * @return Response
      */
     public function notificationAction($type = "success")
@@ -120,8 +116,8 @@ class DefaultController extends Controller
      * @param $title
      * @return RedirectResponse
      */
-    public function updatePostACtion($id , $title){
-
+    public function updatePostACtion($id, $title)
+    {
         $em = $this->getDoctrine()->getManager();
         $post = $em->getRepository('HeticPublicBundle:Post')->find($id);
         if (!$post) {
@@ -140,14 +136,13 @@ class DefaultController extends Controller
         return $this->redirect($this->generateUrl('twig'));
     }
 
-
     /**
      * Voir un post
      * @param $id
      * @return Response
      */
-    public function voirPostAction($id){
-
+    public function voirPostAction($id)
+    {
         $em = $this->getDoctrine()->getManager();
         $post = $em->getRepository('HeticPublicBundle:Post')->find($id);
         if (!$post) {
@@ -159,14 +154,13 @@ class DefaultController extends Controller
         return new Response("<h3>".$post->getTitle()."</h3>");
     }
 
-
     /**
      * Create object
      * @param $title
      * @return RedirectResponse
      */
-    public function createPostACtion($title){
-
+    public function createPostACtion($title)
+    {
         $em = $this->getDoctrine()->getManager();
         $post = new Post();
         $post->setTitle($title);
@@ -181,7 +175,6 @@ class DefaultController extends Controller
         return $this->redirect($this->generateUrl('twig'));
     }
 
-
     /**
      * Page twig
      * @return Response
@@ -193,9 +186,10 @@ class DefaultController extends Controller
             ->getPostsByTitle();
 
         $message = "Bienvenue au cours HETIC";
+
         return $this->render('HeticPublicBundle:Default:twig.html.twig', array(
             'message' => $message,
-            'posts' => $posts
+            'posts' => $posts,
         ));
     }
 }

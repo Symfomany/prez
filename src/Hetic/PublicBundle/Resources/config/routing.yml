@@ -1,5 +1,5 @@
 hetic_public_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: HeticPublicBundle:Default:index }
     requirements:
       _method:  GET|POST
@@ -70,6 +70,18 @@ createpost:
     defaults: { _controller: HeticPublicBundle:Default:createPost }
     requirements:
       _method:  GET
+
+login:
+    path:     /login
+    defaults: { _controller: HeticPublicBundle:Auth:login }
+    requirements:
+      _method:  GET
+
+login_check:
+    path:     /login-check
+    defaults: { _controller: HeticPublicBundle:Auth:login }
+    requirements:
+      _method:  POST
 
 updatepost:
     path:     /update-post/{id}/{title}
