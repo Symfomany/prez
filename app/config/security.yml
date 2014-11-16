@@ -17,8 +17,8 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: user, roles: [ 'ROLE_USER' ] }
-                    admin: { password: password, roles: [ 'ROLE_ADMIN' ] }
+                    user:  { password: "%password_user%", roles: [ 'ROLE_USER' ] }
+                    admin: { password: "%password_admin%", roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:

@@ -11,8 +11,10 @@ parameters:
     mailer_host:       127.0.0.1
     mailer_user:       ~
     mailer_password:   ~
+    password_user: user
+    password_admin: admin
 
-    locale:            en
+    locale:            fr
 
     # A secret key that's used to generate certain security-related tokens
     secret:            6232a010a2824bde06ec68345970a87c7
