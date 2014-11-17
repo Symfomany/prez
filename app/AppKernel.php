@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Hetic\PublicBundle\HeticPublicBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new Hetic\BlogBundle\HeticBlogBundle(),
+            new Hetic\SiteBundle\HeticSiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,24 @@
+hetic_site_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: HeticSiteBundle:Default:index }
+
+hetic_site_response:
+    path:     /response
+    defaults: { _controller: HeticSiteBundle:Default:response }
+
+hetic_site_redirection:
+    path:     /redirection
+    defaults: { _controller: HeticSiteBundle:Default:redirection }
+
+#Foward Action
+hetic_site_forward:
+    path:     /forward
+    defaults: { _controller: HeticSiteBundle:Default:forward }
+
+hetic_site_not_found:
+    path:     /not-found
+    defaults: { _controller: HeticSiteBundle:Default:notfound }
+
+hetic_site_messagesflashs:
+    path:     /messages-flashs
+    defaults: { _controller: HeticSiteBundle:Default:messagesflashs }

@@ -1,0 +1,23 @@
+hetic_blog_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: HeticBlogBundle:Default:index }
+
+hetic_blog_response:
+    path: /response
+    defaults: { _controller: HeticBlogBundle:Default:response }
+
+hetic_blog_redirection:
+    path: /redirection
+    defaults: { _controller: HeticBlogBundle:Default:redirection }
+
+hetic_blog_forward:
+    path: /forward
+    defaults: { _controller: HeticBlogBundle:Default:forward }
+
+hetic_blog_not_found:
+    path: /not-found
+    defaults: { _controller: HeticBlogBundle:Default:notfound }
+
+hetic_blog_messages_flashs:
+    path: /messages-flashs
+    defaults: { _controller: HeticBlogBundle:Default:messagesflashs }
