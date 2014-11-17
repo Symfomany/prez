@@ -1,0 +1,30 @@
+categorie:
+    path:     /
+    defaults: { _controller: "HeticBlogBundle:Categorie:index" }
+
+categorie_show:
+    path:     /{id}/show
+    defaults: { _controller: "HeticBlogBundle:Categorie:show" }
+
+categorie_new:
+    path:     /new
+    defaults: { _controller: "HeticBlogBundle:Categorie:new" }
+
+categorie_create:
+    path:     /create
+    defaults: { _controller: "HeticBlogBundle:Categorie:create" }
+    requirements: { _method: post }
+
+categorie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HeticBlogBundle:Categorie:edit" }
+
+categorie_update:
+    path:     /{id}/update
+    defaults: { _controller: "HeticBlogBundle:Categorie:update" }
+    requirements: { _method: post|put }
+
+categorie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HeticBlogBundle:Categorie:delete" }
+    requirements: { _method: post|delete }

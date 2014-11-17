@@ -1,0 +1,66 @@
+Post:
+    type: entity
+    table: post
+    indexes:
+        IDX_5A8A6C8DBCF5E72D:
+            columns:
+                - categorie_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        title:
+            type: string
+            nullable: true
+            length: 300
+            fixed: false
+            comment: ''
+        description:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        visible:
+            type: boolean
+            nullable: true
+            comment: ''
+        dateCreated:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: date_created
+    manyToOne:
+        categorie:
+            targetEntity: Categorie
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                categorie_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToMany:
+        tag:
+            targetEntity: Tag
+            cascade: {  }
+            mappedBy: null
+            inversedBy: post
+            joinTable:
+                name: post_tag
+                joinColumns:
+                    -
+                        name: post_id
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: tag_id
+                        referencedColumnName: id
+            orderBy: null
+    lifecycleCallbacks: {  }

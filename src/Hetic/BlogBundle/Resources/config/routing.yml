@@ -1,3 +1,15 @@
+hetic_blog_post:
+    resource: "@HeticBlogBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
+hetic_blog_categorie:
+    resource: "@HeticBlogBundle/Resources/config/routing/categorie.yml"
+    prefix:   /categorie
+
+hetic_blog_tag:
+    resource: "@HeticBlogBundle/Resources/config/routing/tag.yml"
+    prefix:   /tag
+
 hetic_blog_homepage:
     path:     /hello/{name}
     defaults: { _controller: HeticBlogBundle:Default:index }

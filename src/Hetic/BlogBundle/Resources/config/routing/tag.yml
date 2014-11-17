@@ -1,0 +1,13 @@
+hetic_blog_tag_index:
+  path: /
+  defaults: {_controller: HeticBlogBundle:Tag:index }
+
+# Voir un tag
+hetic_blog_tag_show:
+  path: /show/{id}
+  defaults: {_controller: HeticBlogBundle:Tag:show }
+
+# Créer un tag
+hetic_blog_tag_create:
+  path: /creer-tag
+  defaults: {_controller: HeticBlogBundle:Tag:create }
