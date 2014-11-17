@@ -14,19 +14,21 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/hello/Fabien');
+        $crawler = $client->request('GET', '/');
 
-        $this->assertTrue($crawler->filter('html:contains("Bonjour Fabien")')->count() > 0);
+        $this->assertTrue($crawler->filter('html:contains("Hello Boyer Julien")')->count() > 0);
 
-        $crawler = $client->request('GET', '/message');
+        $crawler = $client->request('GET', '/fr/message');
 
         $this->assertTrue($crawler->filter('html:contains("Vous avez un nouveau message")')->count() > 0);
+
+        $crawler = $client->request('GET', '/en/message');
+
+        $this->assertTrue($crawler->filter('html:contains("You are a new message Julien")')->count() > 0);
 
         $crawler = $client->request('GET', '/redirection');
         $crawler = $client->followRedirect();
 //      var_dump($client->getResponse()->getContent()));
-
-        $this->assertTrue($crawler->filter('html:contains("Vous avez un nouveau message")')->count() > 0);
 
 //        $crawler = $client->request('GET', '/notfound');
 //
@@ -34,13 +36,13 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/messageflash');
         $crawler = $client->followRedirect();
-        $this->assertTrue($crawler->filter('html:contains("Bonjour Juju!")')->count() > 0);
+        $this->assertTrue($crawler->filter('html:contains("Hello Boyer Julien !")')->count() > 0);
 
         $crawler = $client->request('GET', '/notification/error');
 
         $this->assertTrue($crawler->filter('html:contains("Notification: Error")')->count() > 0);
 
-        $crawler = $client->request('GET', '/message');
+        $crawler = $client->request('GET', '/fr/message');
 
 // Assert that there is at least one h2 tag
 // with the class "subtitle"

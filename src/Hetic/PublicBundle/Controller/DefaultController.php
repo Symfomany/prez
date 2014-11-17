@@ -58,7 +58,7 @@ class DefaultController extends Controller
         $name = "Julien";
         $t = $this->get('translator')->trans('Vous avez un nouveau message %name%', array('%name%' => $name ));
 
-        return new Response($t);
+        return new Response("<h3>".$t."</h3>");
     }
 
     /**Redirection action
@@ -99,7 +99,7 @@ class DefaultController extends Controller
             "<b>Success</b  >Message flash qui ne saffiche qu'une seul fois!"
         );
 
-        return $this->redirect($this->generateUrl("hetic_public_homepage", array('name' => "Juju")));
+        return $this->redirect($this->generateUrl("hetic_public_homepage"));
     }
 
     /**
