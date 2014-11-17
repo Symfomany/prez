@@ -27,7 +27,6 @@ class AuthController extends Controller
         } else {
             $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
             $session->remove(SecurityContext::AUTHENTICATION_ERROR);
-            return $this->redirect('hetic_public_homepage');
         }
 
         return $this->render('HeticPublicBundle:Auth:login.html.twig', array(

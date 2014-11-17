@@ -55,7 +55,10 @@ class DefaultController extends Controller
      */
     public function messageAction()
     {
-        return new Response('<h3 class"subtitle">Vous avez un nouveau message</h3>');
+        $name = "Julien";
+        $t = $this->get('translator')->trans('Vous avez un nouveau message %name%', array('%name%' => $name ));
+
+        return new Response($t);
     }
 
     /**Redirection action

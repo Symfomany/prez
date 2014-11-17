@@ -1,14 +1,16 @@
 hetic_public_homepage:
-    path:     /
-    defaults: { _controller: HeticPublicBundle:Default:index }
+    path:     /{_locale}
+    defaults: { _controller: HeticPublicBundle:Default:index, _locale: en }
     requirements:
       _method:  GET
+      _locale: en|fr|de
 
 hetic_public_response:
-    path:     /message
-    defaults: { _controller: HeticPublicBundle:Default:message }
+    path:     /{_locale}/message
+    defaults: { _controller: HeticPublicBundle:Default:message, _locale: en }
     requirements:
       _method:  GET
+      _locale: en|fr|de
 
 hetic_public_form:
     path:     /form

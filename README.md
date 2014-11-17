@@ -49,3 +49,7 @@ following command:
 -------------------------------
  php app/console doctrine:fixtures:load
 
+3) View documentation
+-------------------------------
+ /docs/api/index.html
+

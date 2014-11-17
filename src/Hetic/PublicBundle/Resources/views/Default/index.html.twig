@@ -1,7 +1,7 @@
 {% extends 'HeticPublicBundle::layout.html.twig' %}
 
  {% block body %}
-     <h1> Bonjour {{ name }}!</h1>
-     <h3>Bienvenue à ce tutoriel Symfony 2</h3>
+         <h1> {{ "Bonjour"|trans  }} {{ name }} !</h1>
+         <h3>{{ "Bienvenue à ce tutoriel Symfony 2"|trans  }}</h3>
 
  {% endblock %}
