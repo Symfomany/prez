@@ -36,6 +36,15 @@ class Categorie
     private $description;
 
 
+    /**
+     * Génère une chaine depuis un objet
+     */
+    public function __toString(){
+
+        return empty($this->title) ? $this->id : $this->title;
+
+    }
+
 
     /**
      * Get id

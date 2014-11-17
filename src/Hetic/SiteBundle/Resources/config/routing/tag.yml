@@ -1,0 +1,11 @@
+hetic_site_tag:
+  path: /
+  defaults: {_controller: HeticSiteBundle:Tag:index }
+
+hetic_site_show:
+  path: /show/{id}
+  defaults: {_controller: HeticSiteBundle:Tag:show }
+
+hetic_site_create:
+  path: /create
+  defaults: {_controller: HeticSiteBundle:Tag:create }

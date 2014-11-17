@@ -4,6 +4,8 @@ namespace Hetic\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
+
 /**
  * Post
  *
@@ -80,6 +82,15 @@ class Post
     public function __construct()
     {
         $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Génère une chaine depuis un objet
+     */
+    public function __toString(){
+
+        return empty($this->title) ? $this->id : $this->title;
+
     }
 
 

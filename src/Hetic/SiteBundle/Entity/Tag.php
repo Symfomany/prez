@@ -3,6 +3,8 @@
 namespace Hetic\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Tag
@@ -23,7 +25,13 @@ class Tag
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message = "Votre mot clef est vide")
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 60,
+     *      minMessage = "Votre mot-clef est trop petit {{ limit }}",
+     *      maxMessage = "Votre mots-clefs est trop grand {{ limit }}"
+     * )
      * @ORM\Column(name="word", type="string", length=300, nullable=true)
      */
     private $word;
@@ -41,6 +49,16 @@ class Tag
     public function __construct()
     {
         $this->post = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+    /**
+     * Génère une chaine depuis un objet
+     */
+    public function __toString(){
+
+        return empty($this->word) ? $this->id : $this->word;
+
     }
 
 

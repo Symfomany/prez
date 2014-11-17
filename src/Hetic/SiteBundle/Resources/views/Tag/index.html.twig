@@ -1,0 +1,17 @@
+{% extends "HeticPublicBundle::layout.html.twig" %}
+
+{% block body %}
+    <h1>Liste des tags</h1>
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <ul class="nav nav-list">
+        {% for tag in tags %}
+            <li class="alert alert-block">{{ tag.word }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

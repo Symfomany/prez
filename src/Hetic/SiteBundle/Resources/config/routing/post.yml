@@ -1,0 +1,30 @@
+hetic_post:
+    path:     /
+    defaults: { _controller: "HeticSiteBundle:Post:index" }
+
+hetic_post_show:
+    path:     /{id}/show
+    defaults: { _controller: "HeticSiteBundle:Post:show" }
+
+hetic_post_new:
+    path:     /new
+    defaults: { _controller: "HeticSiteBundle:Post:new" }
+
+hetic_post_create:
+    path:     /create
+    defaults: { _controller: "HeticSiteBundle:Post:create" }
+    requirements: { _method: post }
+
+hetic_post_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HeticSiteBundle:Post:edit" }
+
+hetic_post_update:
+    path:     /{id}/update
+    defaults: { _controller: "HeticSiteBundle:Post:update" }
+    requirements: { _method: post|put }
+
+hetic_post_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HeticSiteBundle:Post:delete" }
+    requirements: { _method: post|delete }
