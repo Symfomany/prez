@@ -32,19 +32,31 @@ class Categorie
     /**
      * @var string
      *
-     * @ORM\Column(name="dscription", type="text", nullable=true)
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
-    private $dscription;
+    private $description;
 
     /**
      * @ORM\OneToMany(targetEntity="Post", mappedBy="categorie")
      */
     protected $posts;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->posts = new ArrayCollection();
     }
+
+    /**
+     * To string an object
+     * @return string
+     */
+    public function __toString(){
+        return empty($this->title) ? $this->id : $this->title;
+    }
+
 
     /**
      * Get id
@@ -82,23 +94,23 @@ class Categorie
     /**
      * Set dscription
      *
-     * @param  string    $dscription
+     * @param  string    $description
      * @return Categorie
      */
-    public function setDscription($dscription)
+    public function setDescription($description)
     {
-        $this->dscription = $dscription;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get dscription
+     * Get description
      *
      * @return string
      */
-    public function getDscription()
+    public function getDescription()
     {
-        return $this->dscription;
+        return $this->description;
     }
 }

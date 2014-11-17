@@ -44,6 +44,14 @@ class Tag
     }
 
     /**
+     * To string an object
+     * @return string
+     */
+    public function __toString(){
+        return empty($this->word) ? $this->id : $this->word;
+    }
+
+    /**
      * Get id
      *
      * @return integer

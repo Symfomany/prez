@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Sam 15 Novembre 2014 à 10:55
+-- Généré le :  Lun 17 Novembre 2014 à 07:44
 -- Version du serveur :  5.5.40-0ubuntu1
 -- Version de PHP :  5.5.12-2ubuntu4.1
 
@@ -29,8 +29,16 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `categorie` (
 `id` int(11) NOT NULL,
   `title` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `dscription` longtext COLLATE utf8_unicode_ci
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `description` longtext COLLATE utf8_unicode_ci
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id`, `title`, `description`) VALUES
+(1, 'Catégorie Sport', 'Catégorie Sport'),
+(2, 'Catégorie Actualités', 'Catégorie Actualités');
 
 -- --------------------------------------------------------
 
@@ -52,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `post` (
 --
 
 INSERT INTO `post` (`id`, `categorie_id`, `title`, `description`, `visible`, `date_created`) VALUES
-(2, NULL, 'Hollande en chut libre', 'Hollande est en chute libre dans les sondages partout en France', NULL, '2014-11-14 01:06:45');
+(2, 1, 'Hollande en chut libre', 'Hollande est en chute libre dans les sondages partout en France', NULL, '2014-11-14 01:06:45');
 
 -- --------------------------------------------------------
 
@@ -74,7 +82,15 @@ CREATE TABLE IF NOT EXISTS `post_tag` (
 CREATE TABLE IF NOT EXISTS `tag` (
 `id` int(11) NOT NULL,
   `word` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `tag`
+--
+
+INSERT INTO `tag` (`id`, `word`) VALUES
+(1, 'hollande'),
+(2, 'nabilla');
 
 --
 -- Index pour les tables exportées
@@ -112,7 +128,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `post`
 --
@@ -122,7 +138,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT pour la table `tag`
 --
 ALTER TABLE `tag`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Contraintes pour les tables exportées
 --

@@ -89,6 +89,7 @@ class PostController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $post = $em->getRepository('HeticPublicBundle:Post')->find($id);
+
         if (!$post) {
             throw $this->createNotFoundException(
                 'Aucun post trouvé pour cet id : '.$id

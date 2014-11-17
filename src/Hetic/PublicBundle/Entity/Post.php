@@ -84,6 +84,15 @@ class Post
     {
         $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
         $this->dateCreated = new \Datetime('now');
+        $this->visible = false;
+    }
+
+    /**
+     * To string an object
+     * @return string
+     */
+    public function __toString(){
+        return empty($this->title) ? $this->id : $this->title;
     }
 
     /**
@@ -251,4 +260,6 @@ class Post
     {
         $this->dateCreated = new \DateTime('now');
     }
+
+
 }
