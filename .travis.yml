@@ -5,9 +5,12 @@ php:
   - 5.4
 
 before_script:
+  - mysql -e 'create database IF NOT EXISTS symfony;' -uroot
   - curl -s http://getcomposer.org/installer | php --
   - php composer.phar install --dev
-  - mysql -p -h 127.0.0.1  -u root -ppass localhost symfony < mysql/symfony.sql
+  - cp app/config/config_test.yml.travis app/config/config_test.yml
+  - php app/console --env=test doctrine:schema:update --force
+
 
 script: phpunit -c app/
 
