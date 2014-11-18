@@ -8,6 +8,7 @@ before_script:
   - mysql -e 'create database IF NOT EXISTS symfony;' -uroot
   - curl -s http://getcomposer.org/installer | php --
   - php composer.phar install --dev
+  - php app/console doctrine:database:drop --force
   - php app/console --env=dev doctrine:schema:update --force
 
 
