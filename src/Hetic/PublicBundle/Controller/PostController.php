@@ -66,9 +66,10 @@ class PostController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+
             $this->get('session')->getFlashBag()->add(
                 'notice',
-                "<b>Success</b> Votre post a bien été crée"
+                $this->get('translator')->trans('post.create')
             );
 
             return $this->redirect($this->generateUrl('twig'));
