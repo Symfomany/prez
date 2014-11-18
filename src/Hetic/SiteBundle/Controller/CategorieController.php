@@ -44,7 +44,7 @@ class CategorieController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('categorie_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('hetic_site_categorie_show', array('id' => $entity->getId())));
         }
 
         return $this->render('HeticSiteBundle:Categorie:new.html.twig', array(
@@ -63,7 +63,7 @@ class CategorieController extends Controller
     private function createCreateForm(Categorie $entity)
     {
         $form = $this->createForm(new CategorieType(), $entity, array(
-            'action' => $this->generateUrl('categorie_create'),
+            'action' => $this->generateUrl('hetic_site_categorie_create'),
             'method' => 'POST',
         ));
 
@@ -143,7 +143,7 @@ class CategorieController extends Controller
     private function createEditForm(Categorie $entity)
     {
         $form = $this->createForm(new CategorieType(), $entity, array(
-            'action' => $this->generateUrl('categorie_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('hetic_site_categorie_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -172,7 +172,7 @@ class CategorieController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('categorie_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('hetic_site_categorie_edit', array('id' => $id)));
         }
 
         return $this->render('HeticSiteBundle:Categorie:edit.html.twig', array(
@@ -202,7 +202,7 @@ class CategorieController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('categorie'));
+        return $this->redirect($this->generateUrl('hetic_site_categorie'));
     }
 
     /**
@@ -215,7 +215,7 @@ class CategorieController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('categorie_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('hetic_site_categorie_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

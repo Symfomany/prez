@@ -7,7 +7,7 @@ php:
 before_script:
   - curl -s http://getcomposer.org/installer | php --
   - php composer.phar install --dev
-#  - mysql -p -h localhost symfony < mysql/symfony.sql
+  - mysql -p -h 127.0.0.1  -u root -ppass localhost symfony < mysql/symfony.sql
 
 script: phpunit -c app/
 

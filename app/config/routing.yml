@@ -1,10 +1,10 @@
 hetic_site:
     resource: "@HeticSiteBundle/Resources/config/routing.yml"
-    prefix:   /site
+    prefix:   /g2
 
 hetic_blog:
     resource: "@HeticBlogBundle/Resources/config/routing.yml"
-    prefix:   /blog
+    prefix:   /g1
 
 hetic_public:
     resource: "@HeticPublicBundle/Resources/config/routing.yml"
