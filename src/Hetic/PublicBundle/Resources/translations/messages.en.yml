@@ -1,4 +1,12 @@
 'Vous avez un nouveau message %name%': 'You are a new message %name%'
 Bonjour: Hello
 'Bienvenue à ce tutoriel Symfony 2': 'Welcome in my tutorial Symfony 2'
-post.create: The post has create
+post:
+  create: The post has create
+  title.label: Your title
+  description.label: Your description
+  categorie.label: Your category
+  tag.label: Your tags
+  visible.label: Your visibility
+  creation: Your post creation
+  save: Save

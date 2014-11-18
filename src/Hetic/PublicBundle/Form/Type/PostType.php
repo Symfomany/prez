@@ -15,13 +15,13 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', null, array('label' => "title.label", 'attr' => array('class' => 'form-control')))
-            ->add('description', null, array('label' => "description.label", 'attr' => array('class' => 'form-control')))
-            ->add('categorie', null, array('label' => "Associer une catégorie"))
-            ->add('tag', null, array('label' => "Associer un ou plusieurs tags"))
-            ->add('visible', null, array('label' => "Visibe ou pas?"))
+            ->add('title', null, array('label' => "post.title.label", 'attr' => array('class' => 'form-control')))
+            ->add('description', null, array('label' => "post.description.label", 'attr' => array('class' => 'form-control')))
+            ->add('categorie', null, array('label' => "post.categorie.label"))
+            ->add('tag', null, array('label' => "post.tag.label"))
+            ->add('visible', null, array('label' => "post.visible.label"))
             ->add("save", "submit", array(
-                "label" => "Sauvegarder ce devis",
+                "label" => "post.save",
                 "attr" => array("class" => "btn btn-primary"), ));
     }
 

@@ -2,4 +2,12 @@
 Bonjour: Bonjour
 'Bienvenue à ce tutoriel Symfony 2': 'Bienvenue à ce tutoriel Symfony 2'
 'Symfony2 is great': 'J''aime Symfony2'
-post.create: Le post a été crée
+post:
+  create: Le post a été crée
+  title.label: Le titre
+  description.label: La description
+  categorie.label: La categorie
+  tag.label: Les tags associés
+  visible.label: La visibilité
+  creation: Création du post
+  save: Sauvegarder
