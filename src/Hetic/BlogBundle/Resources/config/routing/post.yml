@@ -1,30 +1,30 @@
-post:
+hetic_blog_post:
     path:     /
     defaults: { _controller: "HeticBlogBundle:Post:index" }
 
-post_show:
+hetic_blog_post_show:
     path:     /{id}/show
     defaults: { _controller: "HeticBlogBundle:Post:show" }
 
-post_new:
+hetic_blog_post_new:
     path:     /new
     defaults: { _controller: "HeticBlogBundle:Post:new" }
 
-post_create:
+hetic_blog_post_create:
     path:     /create
     defaults: { _controller: "HeticBlogBundle:Post:create" }
     requirements: { _method: post }
 
-post_edit:
+hetic_blog_post_edit:
     path:     /{id}/edit
     defaults: { _controller: "HeticBlogBundle:Post:edit" }
 
-post_update:
+hetic_blog_post_update:
     path:     /{id}/update
     defaults: { _controller: "HeticBlogBundle:Post:update" }
     requirements: { _method: post|put }
 
-post_delete:
+hetic_blog_post_delete:
     path:     /{id}/delete
     defaults: { _controller: "HeticBlogBundle:Post:delete" }
     requirements: { _method: post|delete }

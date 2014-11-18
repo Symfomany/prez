@@ -1,12 +1,17 @@
-Hello {{ name }}!
-{% for flashMessage in app.session.flashbag.get('notice') %}
-    <div class="flash-notice">
-        {{ flashMessage }}
-    </div>
-{% endfor %}
+xtends 'HeticPublicBundle::layout.html.twig' %}
 
-<pre>
-    {{ dump(name) }}
-</pre>
+{% block body -%}
+    Hello {{ name }}!
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
 
-{{ render(controller('HeticSiteBundle:Default:response')) }}
+    <pre>
+         {{ dump(name) }}
+    </pre>
+
+    {{ render(controller('HeticSiteBundle:Default:response')) }}
+
+{% endblock %}
