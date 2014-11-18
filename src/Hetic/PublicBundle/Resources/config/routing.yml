@@ -19,10 +19,11 @@ hetic_public_form:
       _method:  GET|POST
 
 hetic_public_createpost:
-    path:     /create-post
-    defaults: { _controller: HeticPublicBundle:Post:create }
+    path:     /{_locale}/create-post
+    defaults: { _controller: HeticPublicBundle:Post:create, _locale: en }
     requirements:
       _method:  GET|POST
+      _locale: en|fr|de
 
 hetic_public_redirection:
     path:     /redirection

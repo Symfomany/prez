@@ -32,7 +32,7 @@ class Post
 
     /**
      * @var string
-     * @Assert\NotBlank(message="post.title.not_blank")
+     * @Assert\NotBlank(message="post.description.not_blank")
      * @Assert\Length(min=10,max=500, minMessage="post.description.min", maxMessage="post.description.max")
      * @ORM\Column(name="description", type="text", nullable=true)
      */

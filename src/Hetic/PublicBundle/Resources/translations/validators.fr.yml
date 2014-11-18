@@ -1,0 +1,6 @@
+post.title.not_blank: Titre ne doit pas être vide
+post.description.not_blank: Description ne doit pas être vide
+post.title.min: Le titre est trop court!
+post.title.max: Le titre est trop long!
+post.description.min: La description est trop courte !
+post.description.max: Le description est trop longue!

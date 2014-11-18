@@ -1,0 +1,6 @@
+post.title.not_blank: Title has not empty
+post.description.not_blank: Description has not empty
+post.title.min: The title is too short!
+post.title.max: The title is too long!
+post.description.min: The description is too short !
+post.description.max: The description is too long !
