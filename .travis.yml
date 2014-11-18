@@ -6,10 +6,11 @@ php:
 
 before_script:
   - curl -s http://getcomposer.org/installer | php --
+  - cp app/config/parameters.yml.travis app/config/parameters.yml
   - php composer.phar install --dev
-  - php app/console doctrine:database:drop --force
-  - mysql -e 'create database symfony;'
-  - php app/console --env=dev doctrine:schema:update --force
+  - php app/console doctrine:database:create --env=test
+  - php app/console doctrine:schema:create --env=test
+  - php app/console doctrine:fixtures:load -n --env=test
 
 
 script: phpunit -c app/

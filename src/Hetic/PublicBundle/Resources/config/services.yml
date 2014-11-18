@@ -1,4 +1,4 @@
 services:
-#    hetic_public.example:
-#        class: Hetic\PublicBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    hetic_public.post.handler:
+        class: Hetic\PublicBundle\Handler\PostHandler
+        arguments: [@doctrine.orm.entity_manager, @form.factory,@request_stack]

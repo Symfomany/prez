@@ -2,9 +2,10 @@
 namespace Hetic\PublicBundle\Handler;
 use Doctrine\ORM\EntityManager;
 use Hetic\PublicBundle\Entity\Post;
+use Hetic\PublicBundle\Form\Type\PostType;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 /**
  * Class PostHandler
@@ -25,6 +26,18 @@ class PostHandler{
     protected $formFactory;
 
     /**
+     * The current form
+     * @var
+     */
+    protected $form;
+
+    /**
+     * The current post
+     * @var
+     */
+    protected $post;
+
+    /**
      * Request Stack
      * @var
      */
@@ -39,27 +52,19 @@ class PostHandler{
     public function __construct(EntityManager $em, FormFactory $formFactory, RequestStack $request){
         $this->em = $em;
         $this->formFactory = $formFactory;
-        $this->request = $request;
+        $this->request = $request->getCurrentRequest();
     }
 
     /**
      * Processing validating
-     * @param Post $post
      * @return bool
      */
-    public function process(Post $post = null){
-        if (!$post) {
-            throw new NotFoundHttpException(
-                'Aucun post trouvé pour cet id : '.$id
-            );
-        }
+    public function process(){
 
-        $form = $this->getForm($post);
+        $this->form->handleRequest($this->request);
 
-        $form->handleRequest($this->request);
-
-        if ($form->isValid()) {
-
+        if ($this->form->isValid()) {
+            $this->store($this->post);
             return true;
         }
 
@@ -72,10 +77,16 @@ class PostHandler{
      * @return mixed
      */
     public function getForm(Post $post = null){
-        return $this->formFactory->createForm(new PostType(), $post, array(
+        if($post == null){
+            $post = new Post();
+        }
+        $this->post = $post;
+        $this->form =  $this->formFactory->create(new PostType(), $post, array(
             'method' => 'POST',
             'attr' => array('novalidate' => "novalidate"),
         ));
+
+        return $this->form;
     }
 
     /**
@@ -134,5 +145,72 @@ class PostHandler{
     public function some($criteria = array(), $order = array(), $limit = 10){
         return $this->getRepository()->findBy($criteria, $order, $limit);
     }
+
+    /**
+     * @return EntityManager
+     */
+    public function getEm()
+    {
+        return $this->em;
+    }
+
+    /**
+     * @param EntityManager $em
+     */
+    public function setEm($em)
+    {
+        $this->em = $em;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFormFactory()
+    {
+        return $this->formFactory;
+    }
+
+    /**
+     * @param mixed $formFactory
+     */
+    public function setFormFactory($formFactory)
+    {
+        $this->formFactory = $formFactory;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
+
+    /**
+     * @param mixed $post
+     */
+    public function setPost($post)
+    {
+        $this->post = $post;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * @param mixed $request
+     */
+    public function setRequest($request)
+    {
+        $this->request = $request;
+    }
+
+
+
 
 }

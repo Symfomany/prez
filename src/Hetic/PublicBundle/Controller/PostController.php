@@ -53,19 +53,9 @@ class PostController extends Controller
             throw new AccessDeniedException();
         }
 
-        $post = new Post();
-        $now = new \DateTime('now');
-        $post->setDateCreated($now);
+        $form = $this->get('hetic_public.post.handler')->getForm();
 
-        $form = $this->createForm(new PostType(), $post, array(
-            'action' => $this->generateUrl('hetic_public_createpost'),
-            'method' => 'POST',
-            'attr' => array('novalidate' => "novalidate"),
-        ));
-
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
+        if ($this->get('hetic_public.post.handler')->process()) {
 
             $this->get('session')->getFlashBag()->add(
                 'notice',
