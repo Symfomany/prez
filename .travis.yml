@@ -8,8 +8,7 @@ before_script:
   - mysql -e 'create database IF NOT EXISTS symfony;' -uroot
   - curl -s http://getcomposer.org/installer | php --
   - php composer.phar install --dev
-  - cp app/config/config_test.yml.travis app/config/config_test.yml
-  - php app/console --env=test doctrine:schema:update --force
+  - php app/console --env=dev doctrine:schema:update --force
 
 
 script: phpunit -c app/
