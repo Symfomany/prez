@@ -6,7 +6,7 @@ Prez Project in Symfony 2
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Symfomany/prez/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Symfomany/prez/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/df27ca15-3f18-4fd3-9467-85b42aecbfc3/big.png)](https://insight.sensiolabs.com/account/widget?project=df27ca15-3f18-4fd3-9467-85b42aecbfc3)
-
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/Symfomany/prez?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Projet d'apprentissage Symfony 2 pour Presentation by Boyer Julien
 

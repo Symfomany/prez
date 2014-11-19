@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "symfomany/prez",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Project based on Symfony 2 By Symfomany",
     "autoload": {
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },

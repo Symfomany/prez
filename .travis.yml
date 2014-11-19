@@ -4,9 +4,16 @@ php:
 #  - 5.3
   - 5.4
 
+env:
+  - SYMFONY_COMPONENTS_VERSION=~2.3.6
+  - SYMFONY_COMPONENTS_VERSION=2.4.*
+  - SYMFONY_COMPONENTS_VERSION=2.5.*
+  - SYMFONY_COMPONENTS_VERSION=2.6.*
+
 before_script:
   - curl -s http://getcomposer.org/installer | php --
   - cp app/config/parameters.yml.travis app/config/parameters.yml
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
   - php composer.phar install --dev
   - php app/console doctrine:database:drop --force
   - php app/console doctrine:database:create --env=test
