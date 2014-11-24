@@ -1,0 +1,12 @@
+form:
+  contact:
+    nom:
+      min: Your name is too short
+      required: Your name is required
+
+tag:
+  word:
+    required: Your tag is required
+    min: Your tag is too short
+    max: Your tag is too long
+

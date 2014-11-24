@@ -1,0 +1,9 @@
+contact:
+  form:
+    title: Formulaire de contacte
+    description: Veuillez remplir tous les champs
+
+form:
+  contact:
+    nom: Votre nom
+  success: Votre formulaire et soumis et le tag a bien été crée

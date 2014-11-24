@@ -2,11 +2,9 @@ hetic_site_post:
     resource: "@HeticSiteBundle/Resources/config/routing/post.yml"
     prefix:   /post
 
-
 hetic_site_categorie:
     resource: "@HeticSiteBundle/Resources/config/routing/categorie.yml"
     prefix:   /categorie
-
 
 hetic_site_tag:
     resource: "@HeticSiteBundle/Resources/config/routing/tag.yml"
@@ -36,3 +34,9 @@ hetic_site_not_found:
 hetic_site_messagesflashs:
     path:     /messages-flashs
     defaults: { _controller: HeticSiteBundle:Default:messagesflashs }
+
+hetic_site_contact:
+    path: /{_locale}/contact
+    defaults: { _controller: HeticSiteBundle:Default:contact, _locale: en }
+    requirements:
+      _locale: en|fr|es

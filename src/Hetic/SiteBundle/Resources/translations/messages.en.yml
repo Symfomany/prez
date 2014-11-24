@@ -1,0 +1,10 @@
+contact:
+  form:
+    title: Contact us
+    description: Please complete the form
+
+
+form:
+  contact:
+    nom: Your name
+  success: Yous form is submited. Your tag is stored in database!

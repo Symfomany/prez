@@ -1,0 +1,19 @@
+{% extends "HeticPublicBundle::layout.html.twig" %}
+
+{% block body %}
+    <h1>Edition de tag</h1>
+
+    {#{{ form(form) }}#}
+
+    {{ form_start(form, {'method': 'POST'}) }}
+
+
+    {{ form_label(form.word) }}
+    {{ form_errors(form.word) }}
+    {{ form_widget(form.word) }}
+    {{ form_widget(form.submit) }}
+    {{ form_widget(form._token) }}
+
+    {{ form_end(form, {'render_rest': false}) }}
+
+{% endblock %}

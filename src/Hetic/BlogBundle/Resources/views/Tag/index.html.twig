@@ -1,8 +1,16 @@
-<html>
-    <body>
+{% extends 'HeticPublicBundle::layout.html.twig' %}
+
+{% block body %}
+
         <h1>Liste des tags</h1>
+
         {% for tag in tags  %}
             <p>{{ tag.word }}</p>
+            <p><a href="{{  path('hetic_blog_tag_remove', {'id': tag.id}) }}" class="btn btn-primary">Supprimer ce tag</a> </p>
+            <p><a href="{{  path('hetic_blog_tag_edit', {'id': tag.id}) }}" class="btn btn-warning">Editer ce tag</a> </p>
         {% endfor %}
-    </body>
-</html>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('hetic_blog_tag_create') }}" class="btn btn-danger">Ajouter un tag</a>
+    {% endif %}
+{% endblock %}

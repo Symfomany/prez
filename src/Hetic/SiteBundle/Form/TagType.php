@@ -6,6 +6,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+/**
+ * Class TagType
+ * @package Hetic\SiteBundle\Form
+ */
 class TagType extends AbstractType
 {
     /**
@@ -15,7 +19,7 @@ class TagType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('word', null, array('attr' => array('class' => "form-control")))
+            ->add('word', null, array('label' => "Votre mot-clef",'attr' => array('class' => "form-control")))
             ->add('submit', 'submit', array('attr' => array('class' => "btn btn-primary")))
         ;
     }

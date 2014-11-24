@@ -11,7 +11,10 @@
 
     <ul class="nav nav-list">
         {% for tag in tags %}
-            <li class="alert alert-block">{{ tag.word }}</li>
+            <li class="alert alert-block">{{ tag.word }}
+                 <a href="{{ path('hetic_site_supprimer', {'id': tag.id} ) }}">Supprimer le tag</a>
+            </li>
+
         {% endfor %}
     </ul>
 {% endblock %}

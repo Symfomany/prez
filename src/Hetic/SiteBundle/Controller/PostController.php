@@ -9,8 +9,8 @@ use Hetic\SiteBundle\Entity\Post;
 use Hetic\SiteBundle\Form\PostType;
 
 /**
- * Post controller.
- *
+ * Class PostController
+ * @package Hetic\SiteBundle\Controller
  */
 class PostController extends Controller
 {

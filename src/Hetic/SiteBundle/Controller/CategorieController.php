@@ -9,8 +9,8 @@ use Hetic\SiteBundle\Entity\Categorie;
 use Hetic\SiteBundle\Form\CategorieType;
 
 /**
- * Categorie controller.
- *
+ * Class CategorieController
+ * @package Hetic\SiteBundle\Controller
  */
 class CategorieController extends Controller
 {

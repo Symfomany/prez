@@ -1,0 +1,13 @@
+{%  extends 'HeticPublicBundle::layout.html.twig' %}
+
+{% block body -%}
+
+    {% stylesheets  '@HeticSiteBundle/Resources/public/css/main.css' filter='yui_css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    <h3>{{ "contact.form.title"|trans }}</h3>
+    <p>{{ "contact.form.description"|trans }}</p>
+
+    {{ form(form) }}
+{% endblock %}

@@ -1,0 +1,5 @@
+'Symfony2 is great': 'J''aime Symfony2'
+'Page de Contact': 'Contact us'
+'Veuillez remplir le formulaire': 'Completed the form please'
+contact.nom.label: 'Your name please...'
+

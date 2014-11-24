@@ -21,8 +21,7 @@ class PostControllerTest extends WebTestCase
         $form = $crawler->selectButton('Create')->form(array(
             'hetic_sitebundle_post[title]'  => 'Titre de mon post de test',
             'hetic_sitebundle_post[description]'  => 'La fameuse et longe description de mon post de test',
-            'hetic_sitebundle_post[visible]'  => 1,
-            'hetic_sitebundle_post[tag]'  => array(2)
+
         ));
 
         $client->submit($form);

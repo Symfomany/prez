@@ -34,8 +34,7 @@ class PostControllerTest extends WebTestCase
         $form = $crawler->selectButton('Update')->form(array(
             'hetic_blogbundle_post[title]'  => 'Titre 2 de mon post de test modifié',
             'hetic_blogbundle_post[description]'  => 'La fameuse et longue description modifiée de mon post de test',
-            'hetic_blogbundle_post[visible]'  => 1,
-            'hetic_blogbundle_post[tag]'  => array(2)
+
         ));
 
         $client->submit($form);

@@ -33,3 +33,11 @@ hetic_blog_not_found:
 hetic_blog_messages_flashs:
     path: /messages-flashs
     defaults: { _controller: HeticBlogBundle:Default:messagesflashs }
+
+
+##Mettre une route internationale
+hetic_blog_contact:
+    path: /{_locale}/contact
+    defaults: { _controller: HeticBlogBundle:Default:contact, _locale: en }
+    requirements:
+      _locale: en|fr|es

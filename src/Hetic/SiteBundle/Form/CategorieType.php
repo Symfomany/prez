@@ -6,6 +6,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+/**
+ * Class CategorieType
+ * @package Hetic\SiteBundle\Form
+ */
 class CategorieType extends AbstractType
 {
     /**

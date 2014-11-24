@@ -25,12 +25,12 @@ class Tag
 
     /**
      * @var string
-     * @Assert\NotBlank(message = "Votre mot clef est vide")
+     * @Assert\NotBlank(message = "tag.word.required")
      * @Assert\Length(
      *      min = 5,
      *      max = 60,
-     *      minMessage = "Votre mot-clef est trop petit {{ limit }}",
-     *      maxMessage = "Votre mots-clefs est trop grand {{ limit }}"
+     *      minMessage = "tag.word.min",
+     *      maxMessage = "tag.word.max"
      * )
      * @ORM\Column(name="word", type="string", length=300, nullable=true)
      */

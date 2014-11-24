@@ -11,3 +11,14 @@ hetic_blog_tag_show:
 hetic_blog_tag_create:
   path: /creer-tag
   defaults: {_controller: HeticBlogBundle:Tag:create }
+
+
+# EDiter un tag
+hetic_blog_tag_edit:
+  path: /editer-tag/{id}
+  defaults: {_controller: HeticBlogBundle:Tag:edit }
+
+# Supprimer un tag
+hetic_blog_tag_remove:
+  path: /supprimer-tag/{id}
+  defaults: {_controller: HeticBlogBundle:Tag:remove }

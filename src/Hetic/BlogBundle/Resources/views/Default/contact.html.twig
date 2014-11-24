@@ -1,0 +1,36 @@
+{% extends 'HeticPublicBundle::layout.html.twig' %}
+
+{% block body -%}
+
+    {% stylesheets '@HeticBlogBundle/Resources/public/css/main.css' filter='yui_css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+
+    <h1>{{ "Page de Contact"|trans }}</h1>
+    <h1>{{ "Veuillez remplir le formulaire"|trans }}</h1>
+
+    {#{{ form(form) }}#}
+
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+
+        {{ form_label(form.email, 'Votre E-Mail Pro') }}
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+
+        {{ form_row(form.url) }}
+        {{ form_row(form.sujet) }}
+        {{ form_row(form.post) }}
+        {{ form_row(form.numero) }}
+        {{ form_row(form.message) }}
+
+    <input type="submit" value="Envoyez le formulaire de contact" class="btn btn-primary"/>
+
+    {{ form_end(form, {'render_rest': false}) }}
+
+{% endblock %}
+
+

@@ -4,4 +4,7 @@
          <h1> {{ "Bonjour"|trans  }} {{ name }} !</h1>
          <h3>{{ "Bienvenue à ce tutoriel Symfony 2"|trans  }}</h3>
 
+     {% if is_granted('ROLE_ADMIN') %}
+            <h3>Bienvenue Utilisateur</h3>
+     {% endif %}
  {% endblock %}

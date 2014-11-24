@@ -6,6 +6,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+/**
+ * Class PostType
+ * @package Hetic\SiteBundle\Form
+ */
 class PostType extends AbstractType
 {
     /**

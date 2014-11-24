@@ -7,5 +7,15 @@ hetic_site_show:
   defaults: {_controller: HeticSiteBundle:Tag:show }
 
 hetic_site_create:
-  path: /create
-  defaults: {_controller: HeticSiteBundle:Tag:create }
+  path: /{_locale}/create
+  defaults: {_controller: HeticSiteBundle:Tag:create, _locale: en }
+  requirements:
+    _locale: en|fr|es
+
+hetic_site_editer:
+  path: /edit/{id}
+  defaults: {_controller: HeticSiteBundle:Tag:edit }
+
+hetic_site_supprimer:
+  path: /supprimer/{id}
+  defaults: {_controller: HeticSiteBundle:Tag:supprimer }
