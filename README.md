@@ -1,5 +1,6 @@
 Prez Project in Symfony 2
 ========================
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/Symfomany/prez?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Build Status](https://travis-ci.org/Symfomany/prez.svg?branch=master)](https://travis-ci.org/Symfomany/prez)
 ![Project Status](http://stillmaintained.com/Symfomany/prez.png)
